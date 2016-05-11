@@ -1,0 +1,27 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "Authentication service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "./tasks/develop.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.0",
+    "connect-mongodb-session": "1.1.1",
+    "cookie-parser": "1.4.1",
+    "express": "4.13.4",
+    "express-jwt": "3.3.0",
+    "express-session": "1.13.0",
+    "jsonwebtoken": "5.7.0",
+    "mongodb": "2.1.16",
+    "passport": "0.3.2",
+    "passport-facebook": "2.1.0"
+  },
+  "devDependencies": {
+    "debug": "2.2.0"
+  }
+}
