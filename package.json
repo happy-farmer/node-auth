@@ -19,7 +19,8 @@
     "jsonwebtoken": "5.7.0",
     "mongodb": "2.1.16",
     "passport": "0.3.2",
-    "passport-facebook": "2.1.0"
+    "passport-facebook": "2.1.0",
+    "passport-twitter": "1.0.4"
   },
   "devDependencies": {
     "debug": "2.2.0"
