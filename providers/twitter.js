@@ -1,6 +1,6 @@
 var passport = require('passport')
 var router = require('express').Router()
-var TwitterStrategy = require('twitter-facebook').Strategy
+var TwitterStrategy = require('passport-twitter').Strategy
 
 var twitterStrategy = new TwitterStrategy(
   {
