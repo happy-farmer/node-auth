@@ -1,7 +1,9 @@
 var passport = require('passport')
 var router = require('express').Router()
 var FacebookStrategy = require('passport-facebook').Strategy
+var debug = require('debug')('auth:providers:facebook')
 
+debug('loading')
 var facebookStrategy = new FacebookStrategy(
   {
     clientID: process.env.FACEBOOK_APP_ID,

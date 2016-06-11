@@ -1,7 +1,9 @@
 var passport = require('passport')
 var router = require('express').Router()
 var TwitterStrategy = require('passport-twitter').Strategy
+var debug = require('debug')('auth:providers:twitter')
 
+debug('loading')
 var twitterStrategy = new TwitterStrategy(
   {
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
@@ -12,10 +14,10 @@ var twitterStrategy = new TwitterStrategy(
 )
 passport.use(twitterStrategy)
 
-var auth = passport.authenticate.bind(passport)
-router.get('/twitter/connect', auth('twitter'))
+// var auth = passport.authenticate.bind(passport)
+router.get('/twitter/connect', passport.authenticate('twitter'))
 router.get('/twitter/callback',
-  auth('twitter', {
+  passport.authenticate('twitter', {
     failureRedirect: '/no',
     session: false
   }),
