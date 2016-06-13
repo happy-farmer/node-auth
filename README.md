@@ -3,6 +3,8 @@
 ### Login/Signon endpoints
 
 - GET /facebook/connect
+- GET /twitter/connect
+- GET /google/connect
 
 
 ### Public API
