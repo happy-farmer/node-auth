@@ -23,5 +23,5 @@ router.get('/facebook/callback',
   }),
   require('./completeProfile')
 )
-
+debug('loaded')
 module.exports = router

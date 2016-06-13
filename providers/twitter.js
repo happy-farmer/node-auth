@@ -14,14 +14,14 @@ var twitterStrategy = new TwitterStrategy(
 )
 passport.use(twitterStrategy)
 
-// var auth = passport.authenticate.bind(passport)
-router.get('/twitter/connect', passport.authenticate('twitter'))
+var auth = passport.authenticate.bind(passport)
+router.get('/twitter/connect', auth('twitter'))
 router.get('/twitter/callback',
-  passport.authenticate('twitter', {
+  auth('twitter', {
     failureRedirect: '/no',
     session: false
   }),
   require('./completeProfile')
 )
-
+debug('loaded')
 module.exports = router
