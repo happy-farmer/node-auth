@@ -8,11 +8,11 @@ var options = {algorithm: 'HS256'}
 module.exports = (req, res, next) => {
   debug('ok')
   var user = req.user
-  jwt.sign({user}, secret, options, (token) => {
+  jwt.sign({user}, secret, options, (_id) => {
     tokens.insertOne({
-      _id: token,
+      _id,
       user
     })
-    res.redirect(`/ok/${token}`)
+    res.redirect(`/ok/${_id}`)
   })
 }
