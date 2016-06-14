@@ -2,6 +2,7 @@ var debug = require('debug')('auth:routes:user:index')
 var users = require(process.cwd() + '/dbm').get('users')
 var router = require('express').Router()
 var jwt = require('express-jwt')
+var ObjectId = require('mongodb').ObjectId
 
 const secret = process.env.SECRET_TOKEN
 
@@ -11,10 +12,10 @@ router.use('/user/*',
 
 router.get('/user/profile', (req, res, next) => {
   debug('profile')
-
+  var _id = ObjectId(req.user.uid)
   users.find(
     {
-      _id: req.user._id
+      _id
     }
   )
   .project({
@@ -25,6 +26,8 @@ router.get('/user/profile', (req, res, next) => {
     if (err) {
       next(err, req, res, next)
     } else {
+      // @TODO error on 404 or simular
+      // in case no profile
       res.json(doc.profile)
     }
   })
