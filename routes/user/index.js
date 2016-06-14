@@ -26,9 +26,11 @@ router.get('/user/profile', (req, res, next) => {
     if (err) {
       next(err, req, res, next)
     } else {
-      // @TODO error on 404 or simular
-      // in case no profile
-      res.json(doc.profile)
+      if (doc.profile) {
+        res.json(doc.profile)
+      } else {
+        res.status(410).json()
+      }
     }
   })
 })
