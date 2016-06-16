@@ -8,6 +8,8 @@ var facebookStrategy = new FacebookStrategy(
   {
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
+    // Important note about facebook callback url
+    // http://stackoverflow.com/a/16304984/1401973
     callbackURL: process.env.FACEBOOK_CALLBACK_URL
   },
   require('./upsertProfile')
