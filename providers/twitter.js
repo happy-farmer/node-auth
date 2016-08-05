@@ -18,7 +18,7 @@ var auth = passport.authenticate.bind(passport)
 router.get('/twitter/connect', auth('twitter'))
 router.get('/twitter/callback',
   auth('twitter', {
-    failureRedirect: '/no',
+    failureRedirect: '/redirects/no',
     session: false
   }),
   require('./completeProfile')

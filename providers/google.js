@@ -22,7 +22,7 @@ router.get('/google/connect', auth('google',
 }))
 router.get('/google/callback',
   auth('google', {
-    failureRedirect: '/no',
+    failureRedirect: '/redirects/no',
     session: false
   }),
   require('./completeProfile')

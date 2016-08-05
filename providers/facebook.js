@@ -20,7 +20,7 @@ var auth = passport.authenticate.bind(passport)
 router.get('/facebook/connect', auth('facebook'))
 router.get('/facebook/callback',
   auth('facebook', {
-    failureRedirect: '/no',
+    failureRedirect: '/redirects/no',
     session: false
   }),
   require('./completeProfile')
