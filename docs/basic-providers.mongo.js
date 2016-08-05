@@ -1,3 +1,4 @@
+// MongoDB snippet
 // Get user id name and login providers user has assigned to
 /* global db */
 db.users.aggregate([
