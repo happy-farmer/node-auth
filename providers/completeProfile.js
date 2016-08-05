@@ -12,6 +12,6 @@ module.exports = (req, res, next) => {
     tokens.insertOne({
       token
     })
-    res.redirect(`/ok/${token}`)
+    res.redirect(`/redirect/ok/${token}`)
   })
 }
