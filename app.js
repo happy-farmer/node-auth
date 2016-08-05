@@ -15,7 +15,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(require('./providers'))
-app.use(require('./handlers'))
 app.use(require('./routes'))
 
 app.use((err, req, res, next) => {
