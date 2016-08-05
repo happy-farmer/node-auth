@@ -1,5 +1,5 @@
 var router = require('express').Router()
-var origin = 'http://localhost:8080/'
+var origin = process.env.ORIGIN_URL
 var debug = require('debug')('auth:handlers:index')
 
 router.get('/redirect/ok/:token', (req, res) => {
