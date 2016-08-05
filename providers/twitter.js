@@ -10,7 +10,7 @@ var twitterStrategy = new TwitterStrategy(
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
     callbackURL: process.env.TWITTER_CALLBACK_URL
   },
-  require('./upsertProfile')
+  require('../profile/upsert')
 )
 passport.use(twitterStrategy)
 
@@ -21,7 +21,7 @@ router.get('/twitter/callback',
     failureRedirect: '/redirect/no',
     session: false
   }),
-  require('./completeProfile')
+  require('../profile/complete')
 )
 debug('loaded')
 module.exports = router

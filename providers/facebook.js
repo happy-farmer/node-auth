@@ -12,7 +12,7 @@ var facebookStrategy = new FacebookStrategy(
     // http://stackoverflow.com/a/16304984/1401973
     callbackURL: process.env.FACEBOOK_CALLBACK_URL
   },
-  require('./upsertProfile')
+  require('../profile/upsert')
 )
 passport.use(facebookStrategy)
 
@@ -23,7 +23,7 @@ router.get('/facebook/callback',
     failureRedirect: '/redirect/no',
     session: false
   }),
-  require('./completeProfile')
+  require('../profile/complete')
 )
 debug('loaded')
 module.exports = router

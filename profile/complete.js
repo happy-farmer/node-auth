@@ -1,4 +1,4 @@
-var debug = require('debug')('auth:completeProfile')
+var debug = require('debug')('auth:profile:complete')
 var jwt = require('jsonwebtoken')
 var tokens = require(process.cwd() + '/dbm').get('tokens')
 

@@ -1,4 +1,4 @@
-var debug = require('debug')('auth:upsertProfile')
+var debug = require('debug')('auth:profile:upsert')
 var users = require(process.cwd() + '/dbm').get('users')
 
 module.exports = (accessToken, refreshToken, providerData, done) => {
@@ -25,9 +25,9 @@ module.exports = (accessToken, refreshToken, providerData, done) => {
     var upsertedId = doc.upsertedId
     debug(`upserted ${providerData.displayName}`)
     if (upsertedId) {
-      require('./newProfile')(upsertedId, providerData, done)
+      require('./new')(upsertedId, providerData, done)
     } else {
-      require('./oldProfile')(query, done)
+      require('./old')(query, done)
     }
   })
   .catch((err) => done(err, null))

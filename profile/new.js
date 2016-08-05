@@ -1,4 +1,4 @@
-var debug = require('debug')('auth:newProfile')
+var debug = require('debug')('auth:profile:new')
 var users = require(process.cwd() + '/dbm').get('users')
 
 module.exports = (uid, providerData, done) => {

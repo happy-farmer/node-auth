@@ -10,7 +10,7 @@ var googleStrategy = new GoogleStrategy(
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK_URL
   },
-  require('./upsertProfile')
+  require('../profile/upsert')
 )
 passport.use(googleStrategy)
 
@@ -25,7 +25,7 @@ router.get('/google/callback',
     failureRedirect: '/redirect/no',
     session: false
   }),
-  require('./completeProfile')
+  require('../profile/complete')
 )
 
 debug('loaded')

@@ -1,4 +1,4 @@
-var debug = require('debug')('auth:oldProfile')
+var debug = require('debug')('auth:profile:old')
 var users = require(process.cwd() + '/dbm').get('users')
 
 module.exports = (query, done) => {
